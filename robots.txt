@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://advancemarketingintegration.com/sitemap.xml
+
+Sitemap: https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/sitemap.xml

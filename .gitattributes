@@ -1,1 +1,29 @@
-https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/future-of-search-marketing.html* text=auto
+# Automatically detect text files
+* text=auto
+
+# Normalize website source files to LF
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.xml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+
+# Treat image files as binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.avif binary
+*.svg text eol=lf
+*.ico binary
+
+# Treat common document files as binary
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
