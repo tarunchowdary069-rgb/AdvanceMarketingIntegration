@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/future-of-search-marketing.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/verifiability-revolution.html</loc>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
