@@ -505,4 +505,421 @@
       background: var(--page-background);
     }
 
-   
+    .section-alt {
+      border-block: 1px solid var(--border);
+      background: var(--surface-soft);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2,
+    .section h2 {
+      margin: 12px 0 0;
+      color: var(--text);
+      font-size:
+        clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    .section-introduction {
+      max-width: 700px;
+      margin: 15px 0 0;
+      color: var(--text-secondary);
+    }
+
+    #searchInput {
+      width: min(330px, 100%);
+      min-height: 46px;
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    #searchInput::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.82;
+    }
+
+    /* ========================================
+       ARTICLE CARDS
+    ======================================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .article-card {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .card-accent {
+      height: 7px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          var(--secondary),
+          var(--accent)
+        );
+    }
+
+    .article-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 27px;
+    }
+
+    .article-card h3 {
+      margin: 16px 0 12px;
+      color: var(--text);
+      font-size: 1.43rem;
+      line-height: 1.32;
+      letter-spacing: -0.02em;
+    }
+
+    .article-card p {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      margin: 0 0 21px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      color: var(--text-secondary);
+      font-size: 0.87rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 22px;
+      color: var(--primary);
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .card-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    #emptyMessage {
+      margin-top: 24px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       ABOUT AND CONTACT
+    ======================================== */
+
+    .about-copy {
+      margin-top: 20px;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .topic-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 27px 0 0;
+      list-style: none;
+    }
+
+    .topic-list li {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 37px;
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .contact h2 {
+      font-size:
+        clamp(1.75rem, 4vw, 2.7rem);
+    }
+
+    .contact p {
+      margin: 14px 0 0;
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      padding: 30px 0;
+      background: var(--header-background);
+      color: #afbdd0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    footer a {
+      color: #e4edf9;
+    }
+
+    /* ========================================
+       RESPONSIVE RULES
+    ======================================== */
+
+    @media (max-width: 860px) {
+      .menu-button {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .theme-label {
+        display: none;
+      }
+
+      .theme-toggle {
+        width: 42px;
+        padding: 7px;
+      }
+
+      #mainNav {
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 21px 4%;
+        border-top:
+          1px solid rgba(255, 255, 255, 0.12);
+        background: var(--header-background);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #mainNav.open {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured {
+        max-width: 650px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .brand {
+        max-width: 190px;
+        line-height: 1.2;
+      }
+
+      .hero {
+        padding: 65px 0 54px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-heading {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      #searchInput {
+        width: 100%;
+      }
+
+      .contact {
+        align-items: flex-start;
+        padding: 26px;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  #mainContent
+    Skip to main content
+  </a>
+
+  <header class="header">
+    <div class="container nav">
+      #home
+        Advance Marketing Integration
+      </a>
+
+      <div class="nav-controls">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <span
+            class="theme-icon"
+            aria-hidden="true"
+          >
+            ☾
+          </span>
+
+          <span class="theme-label">
+            Dark
+          </span>
+        </button>
+
+        <button
+          class="menu-button"
+          id="menuButton"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="mainNav"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+
+      <nav
+        id="mainNav"
+        aria-label="Main navigation"
+      >
+        #homeHome</a>
+        #updatesArticles</a>
+        #aboutAbout</a>
+        #contactContact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag">
+            Marketing, technology and industry
+          </span>
+
+          <h1>
+            Research for the next generation of digital industry.
+          </h1>
+
+          <p class="hero-copy">
+            Explore accessible, research-oriented articles connecting
+            marketing, artificial intelligence, quantum computing, VLSI,
+            embedded systems, and humanoid robotics.
+          </p>
+
+          <div class="hero-actions">
+            #updates
+              Explore articles
+            </a>
+
+            #about
+              About this project
+            </a>
+          </div>
+        </div>
+
+        <aside class="featured">
+          <small>LATEST ARTICLE</small>
+
+          <h2>
+            Quantum Synergies in Cyber-Physical Systems
+          </h2>
+
+          <p>
+            A strategic examination of quantum-ready web systems,
+            responsible marketing, embedded VLSI, intelligent actuators,
+            and India's humanoid-robotics opportunity.
+          </p>
+
+          future-of-search-marketing.html
+            Read the quantum article →
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="updates" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="tag">
+              Information center
+            </span>
+
+            <h2>Latest articles</h2>
+
+            <p class="section-introduction">
+              Search the complete collection of research and marketing
+              articles published by
