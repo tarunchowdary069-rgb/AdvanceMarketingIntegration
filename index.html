@@ -2,863 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    Advance Marketing Integration | Research and Marketing Updates
-  </title>
-
-  <meta
-    name="description"
-    content="Research-oriented articles on marketing, AI, quantum computing, VLSI, embedded systems, and humanoid robotics."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research-oriented articles on marketing, AI, quantum computing, VLSI, embedded systems, and humanoid robotics.">
   <meta name="robots" content="index, follow">
-
-  <meta
-    name="author"
-    content="Advance Marketing Integration"
-  >
-
+  <meta name="author" content="Advance Marketing Integration">
   <meta name="theme-color" content="#071426">
-
-  <link
-    rel="canonical"
-    href="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/"
-  >
-
-  <!-- Open Graph metadata -->
-
-  <meta
-    property="og:title"
-    content="Advance Marketing Integration"
-  >
-
-  <meta
-    property="og:description"
-    content="Research-oriented articles on marketing, AI, quantum computing, VLSI, embedded systems, and humanoid robotics."
-  >
-
+  <link rel="canonical" href="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/">
+  <meta property="og:title" content="Advance Marketing Integration">
+  <meta property="og:description" content="Research on marketing, AI, quantum computing, embedded systems, and robotics.">
   <meta property="og:type" content="website">
-
-  <meta
-    property="og:url"
-    content="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/"
-  >
-
-  <!-- Apply the saved theme before rendering the page. -->
-
+  <meta property="og:url" content="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/">
+  <title>Advance Marketing Integration | Research and Marketing Updates</title>
+  <link rel="stylesheet" href="style.css">
   <script>
-    (function () {
-      try {
-        const savedTheme =
-          localStorage.getItem("ami-theme");
-
-        const preferredTheme =
-          savedTheme === "dark" ||
-          savedTheme === "light"
-            ? savedTheme
-            : window.matchMedia(
-                "(prefers-color-scheme: dark)"
-              ).matches
-                ? "dark"
-                : "light";
-
-        document.documentElement.setAttribute(
-          "data-theme",
-          preferredTheme
-        );
-      } catch (error) {
-        document.documentElement.setAttribute(
-          "data-theme",
-          "light"
-        );
-      }
-    })();
+    try {
+      const saved = localStorage.getItem("ami-theme");
+      const theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+    } catch (_) {}
   </script>
-
-  <style>
-    /* ========================================
-       DESIGN TOKENS
-    ======================================== */
-
-    :root {
-      color-scheme: light;
-
-      --page-background: #f8fafc;
-      --surface: #ffffff;
-      --surface-soft: #f1f5f9;
-      --surface-highlight: #eef4ff;
-
-      --header-background: #071426;
-      --hero-start: #071426;
-      --hero-end: #16306d;
-
-      --primary: #2558e6;
-      --primary-hover: #1947c7;
-      --secondary: #7657ff;
-      --accent: #008c82;
-
-      --text: #172033;
-      --text-secondary: #526079;
-      --text-on-dark: #ffffff;
-      --text-on-dark-secondary: #d7e3f4;
-
-      --border: #dce4ef;
-      --focus: #7ca6ff;
-
-      --shadow:
-        0 18px 45px rgba(15, 23, 42, 0.09);
-
-      --container-width: 1160px;
-      --header-height: 72px;
-    }
-
-    html[data-theme="dark"] {
-      color-scheme: dark;
-
-      --page-background: #07101d;
-      --surface: #0d1929;
-      --surface-soft: #111f32;
-      --surface-highlight: #14233b;
-
-      --header-background: #030914;
-      --hero-start: #030914;
-      --hero-end: #14285c;
-
-      --primary: #82aaff;
-      --primary-hover: #a7c1ff;
-      --secondary: #a98fff;
-      --accent: #4bd5c5;
-
-      --text: #eff5fc;
-      --text-secondary: #bdcada;
-      --text-on-dark: #ffffff;
-      --text-on-dark-secondary: #d7e3f4;
-
-      --border: #2b3b51;
-      --focus: #9bb9ff;
-
-      --shadow:
-        0 20px 50px rgba(0, 0, 0, 0.28);
-    }
-
-    /* ========================================
-       RESET AND ACCESSIBILITY
-    ======================================== */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--page-background);
-      color: var(--text);
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-      line-height: 1.7;
-    }
-
-    body,
-    header,
-    main,
-    section,
-    article,
-    aside,
-    footer,
-    input,
-    button {
-      transition:
-        background-color 180ms ease,
-        border-color 180ms ease,
-        color 180ms ease;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button,
-    input {
-      font: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
-    :focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 3px;
-    }
-
-    .skip-link {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 100;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: #ffffff;
-      color: #071426;
-      font-weight: 800;
-      text-decoration: none;
-      transform: translateY(-150%);
-    }
-
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    .container {
-      width: min(var(--container-width), 92%);
-      margin-inline: auto;
-    }
-
-    .narrow {
-      width: min(780px, 100%);
-    }
-
-    /* ========================================
-       HEADER
-    ======================================== */
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      min-height: var(--header-height);
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(7, 20, 38, 0.96);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav {
-      position: relative;
-      display: flex;
-      min-height: var(--header-height);
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .brand {
-      color: #ffffff;
-      font-size: 1.02rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-    }
-
-    .nav-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: auto;
-    }
-
-    #mainNav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    #mainNav a {
-      color: #dce8f8;
-      font-size: 0.94rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    #mainNav a:hover,
-    #mainNav a:focus-visible {
-      color: #ffffff;
-    }
-
-    .theme-toggle,
-    .menu-button {
-      min-height: 40px;
-      border:
-        1px solid rgba(255, 255, 255, 0.3);
-      background:
-        rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      cursor: pointer;
-    }
-
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: 750;
-    }
-
-    .theme-toggle:hover,
-    .menu-button:hover {
-      background:
-        rgba(255, 255, 255, 0.17);
-    }
-
-    .theme-icon {
-      display: inline-grid;
-      width: 20px;
-      height: 20px;
-      place-items: center;
-      line-height: 1;
-    }
-
-    .menu-button {
-      display: none;
-      width: 42px;
-      border-radius: 9px;
-      font-size: 1.2rem;
-    }
-
-    /* ========================================
-       HERO
-    ======================================== */
-
-    .hero {
-      overflow: hidden;
-      padding: 94px 0 78px;
-      background:
-        radial-gradient(
-          circle at 82% 18%,
-          rgba(118, 87, 255, 0.3),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 15% 82%,
-          rgba(0, 140, 130, 0.25),
-          transparent 25%
-        ),
-        linear-gradient(
-          135deg,
-          var(--hero-start),
-          var(--hero-end)
-        );
-      color: var(--text-on-dark);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.2fr)
-        minmax(300px, 0.8fr);
-      gap: 52px;
-      align-items: center;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: var(--surface-highlight);
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-
-    .hero .tag {
-      border:
-        1px solid rgba(255, 255, 255, 0.24);
-      background:
-        rgba(255, 255, 255, 0.1);
-      color: #e2ebff;
-    }
-
-    .hero h1 {
-      max-width: 760px;
-      margin: 22px 0 22px;
-      color: #ffffff;
-      font-size:
-        clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.03;
-      letter-spacing: -0.055em;
-    }
-
-    .hero-copy {
-      max-width: 700px;
-      margin: 0;
-      color: var(--text-on-dark-secondary);
-      font-size:
-        clamp(1.05rem, 2vw, 1.24rem);
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 31px;
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 46px;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 19px;
-      border: 0;
-      border-radius: 9px;
-      background: var(--primary);
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    html[data-theme="dark"] .button {
-      color: #071426;
-    }
-
-    .button:hover {
-      background: var(--primary-hover);
-      transform: translateY(-1px);
-    }
-
-    .hero .button {
-      background: #ffffff;
-      color: #071426;
-    }
-
-    .button-secondary {
-      border:
-        1px solid rgba(255, 255, 255, 0.38);
-      background: transparent !important;
-      color: #ffffff !important;
-    }
-
-    .featured {
-      padding: 28px;
-      border:
-        1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 18px;
-      background:
-        rgba(255, 255, 255, 0.1);
-      box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.16);
-      backdrop-filter: blur(12px);
-    }
-
-    .featured small {
-      color: #b9cbeb;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-    }
-
-    .featured h2 {
-      margin: 14px 0 13px;
-      color: #ffffff;
-      font-size: 1.55rem;
-      line-height: 1.3;
-    }
-
-    .featured p {
-      margin: 0 0 21px;
-      color: #d8e4f6;
-    }
-
-    .featured-link {
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
-    }
-
-    /* ========================================
-       PAGE SECTIONS
-    ======================================== */
-
-    .section {
-      padding: 82px 0;
-      background: var(--page-background);
-    }
-
-    .section-alt {
-      border-block: 1px solid var(--border);
-      background: var(--surface-soft);
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 34px;
-    }
-
-    .section-heading h2,
-    .section h2 {
-      margin: 12px 0 0;
-      color: var(--text);
-      font-size:
-        clamp(2rem, 4vw, 3.15rem);
-      line-height: 1.15;
-      letter-spacing: -0.035em;
-    }
-
-    .section-introduction {
-      max-width: 700px;
-      margin: 15px 0 0;
-      color: var(--text-secondary);
-    }
-
-    #searchInput {
-      width: min(330px, 100%);
-      min-height: 46px;
-      padding: 10px 15px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--surface);
-      color: var(--text);
-    }
-
-    #searchInput::placeholder {
-      color: var(--text-secondary);
-      opacity: 0.82;
-    }
-
-    /* ========================================
-       ARTICLE CARDS
-    ======================================== */
-
-    .cards {
-      display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-    .article-card {
-      display: flex;
-      min-height: 100%;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-
-    .card-accent {
-      height: 7px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--primary),
-          var(--secondary),
-          var(--accent)
-        );
-    }
-
-    .article-card-body {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding: 27px;
-    }
-
-    .article-card h3 {
-      margin: 16px 0 12px;
-      color: var(--text);
-      font-size: 1.43rem;
-      line-height: 1.32;
-      letter-spacing: -0.02em;
-    }
-
-    .article-card p {
-      display: block;
-      visibility: visible;
-      opacity: 1;
-      margin: 0 0 21px;
-      color: var(--text-secondary);
-      line-height: 1.75;
-    }
-
-    .card-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-      color: var(--text-secondary);
-      font-size: 0.87rem;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: auto;
-      padding-top: 22px;
-      color: var(--primary);
-      font-weight: 850;
-      text-decoration: none;
-    }
-
-    .card-link:hover {
-      color: var(--primary-hover);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-
-    #emptyMessage {
-      margin-top: 24px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--surface);
-      color: var(--text-secondary);
-    }
-
-    /* ========================================
-       ABOUT AND CONTACT
-    ======================================== */
-
-    .about-copy {
-      margin-top: 20px;
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-    }
-
-    .topic-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0;
-      margin: 27px 0 0;
-      list-style: none;
-    }
-
-    .topic-list li {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface);
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .contact {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      padding: 37px;
-      border: 1px solid var(--border);
-      border-radius: 19px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-
-    .contact h2 {
-      font-size:
-        clamp(1.75rem, 4vw, 2.7rem);
-    }
-
-    .contact p {
-      margin: 14px 0 0;
-      color: var(--text-secondary);
-    }
-
-    /* ========================================
-       FOOTER
-    ======================================== */
-
-    footer {
-      padding: 30px 0;
-      background: var(--header-background);
-      color: #afbdd0;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    footer a {
-      color: #e4edf9;
-    }
-
-    /* ========================================
-       RESPONSIVE RULES
-    ======================================== */
-
-    @media (max-width: 860px) {
-      .menu-button {
-        display: inline-grid;
-        place-items: center;
-      }
-
-      .theme-label {
-        display: none;
-      }
-
-      .theme-toggle {
-        width: 42px;
-        padding: 7px;
-      }
-
-      #mainNav {
-        position: absolute;
-        top: var(--header-height);
-        right: 0;
-        left: 0;
-        display: none;
-        padding: 21px 4%;
-        border-top:
-          1px solid rgba(255, 255, 255, 0.12);
-        background: var(--header-background);
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      #mainNav.open {
-        display: flex;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .featured {
-        max-width: 650px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .brand {
-        max-width: 190px;
-        line-height: 1.2;
-      }
-
-      .hero {
-        padding: 65px 0 54px;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-heading {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      #searchInput {
-        width: 100%;
-      }
-
-      .contact {
-        align-items: flex-start;
-        padding: 26px;
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  #mainContent
-    Skip to main content
-  </a>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
 
-  #home Advance Marketing Integration
-☾ Dark ☰
-#homeHome #updatesArticles #aboutAbout #contactContact
+  <header class="header">
     <div class="container nav">
-      #home
-        Advance Marketing Integration
-      </a>
-
-      <div class="nav-controls">
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          type="button"
-          aria-label="Switch to dark mode"
-          aria-pressed="false"
-        >
-          <span
-            class="theme-icon"
-            aria-hidden="true"
-          >
-            ☾
-          </span>
-
-          <span class="theme-label">
-            Dark
-          </span>
+      <a class="brand" href="#home">Advance Marketing Integration</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">
+          <span id="themeIcon" aria-hidden="true">☾</span><span class="theme-label">Theme</span>
         </button>
-
-        <button
-          class="menu-button"
-          id="menuButton"
-          type="button"
-          aria-label="Open navigation"
-          aria-controls="mainNav"
-          aria-expanded="false"
-        >
-          ☰
-        </button>
+        <button class="menu-button" id="menuButton" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">☰</button>
       </div>
-
-      <nav
-        id="mainNav"
-        aria-label="Main navigation"
-      >
-        #homeHome</a>
-        #updatesArticles</a>
-        #aboutAbout</a>
-        #contactContact</a>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#updates">Articles</a><a href="#about">About</a><a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -867,47 +44,20 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="tag">
-            Marketing, technology and industry
-          </span>
-
-          <h1>
-            Research for the next generation of digital industry.
-          </h1>
-
-          <p class="hero-copy">
-            Explore accessible, research-oriented articles connecting
-            marketing, artificial intelligence, quantum computing, VLSI,
-            embedded systems, and humanoid robotics.
-          </p>
-
-          #updates Explore articles #about About this project
-            #updates
-              Explore articles
-            </a>
-
-            #about
-              About this project
-            </a>
+          <span class="tag">Marketing, technology and industry</span>
+          <h1>Research for the next generation of digital industry.</h1>
+          <p class="hero-copy">Explore accessible, research-oriented articles connecting marketing, artificial intelligence, quantum computing, VLSI, embedded systems, and humanoid robotics.</p>
+          <div class="hero-actions">
+            <a class="button" href="#updates">Explore articles</a>
+            <a class="button button-secondary" href="#about">About this project</a>
           </div>
         </div>
-
-        LATEST ARTICLE
-Quantum Synergies in Cyber-Physical Systems
-A strategic examination of quantum-ready web systems, responsible marketing, embedded VLSI, intelligent actuators, and India's humanoid-robotics opportunity.
-
-./future-of-search-marketing.html Read the quantum article →
+        <aside class="featured" aria-labelledby="featuredTitle">
           <small>LATEST ARTICLE</small>
-
-          <h2>
-            Quantum Synergies in Cyber-Physical Systems
-          </h2>
-
-     Featured research
-Quantum Synergies in Cyber-Physical Systems
-A strategic examination of quantum-ready web systems, responsible marketing, embedded VLSI, intelligent actuators, and India's humanoid-robotics opportunity.
-
-Read the quantum article → Browse all articles
+          <h2 id="featuredTitle">Quantum Synergies in Cyber-Physical Systems</h2>
+          <p>A strategic examination of quantum-ready web systems, responsible marketing, embedded VLSI, intelligent actuators, and India's humanoid-robotics opportunity.</p>
+          <a class="featured-link" href="future-of-search-marketing.html">Read the quantum article →</a>
+        </aside>
       </div>
     </section>
 
@@ -915,12 +65,123 @@ Read the quantum article → Browse all articles
       <div class="container">
         <div class="section-heading">
           <div>
-            <span class="tag">
-              Information center
-            </span>
+            <span class="tag">Information center</span>
+            <h2>Latest articles</h2>
+            <p>Search the complete collection of published research and marketing articles.</p>
+          </div>
+          <div class="article-tools">
+            <label class="visually-hidden" for="searchInput">Search articles</label>
+            <input id="searchInput" type="search" placeholder="Search articles">
+            <button class="button" id="openUploadDialog" type="button">Upload an article</button>
+          </div>
+        </div>
 
-            <h2>Latest articles</h2>Upload an article
+        <div class="cards" id="articleGrid">
+          <article class="card" data-search="quantum cyber physical systems humanoid robotics vlsi embedded">
+            <span class="tag">Quantum systems</span>
+            <time datetime="2026-10-13">October 13, 2026</time>
+            <h3>Quantum Synergies in Cyber-Physical Systems</h3>
+            <p>Quantum-ready web systems, embedded VLSI, intelligent actuators, and India's humanoid-robotics opportunity.</p>
+            <a class="card-link" href="future-of-search-marketing.html">Read article →</a>
+          </article>
 
-            <p class="section-introduction">
-              Search the complete collection of research and marketing
-              articles published by
+          <article class="card" data-search="verifiability artificial intelligence responsible marketing trust">
+            <span class="tag">Responsible AI</span>
+            <time datetime="2026-10-13">October 13, 2026</time>
+            <h3>The Verifiability Revolution</h3>
+            <p>How transparent evidence and responsible systems can strengthen credibility in digital communication.</p>
+            <a class="card-link" href="verifiability-revolution.html">Read article →</a>
+          </article>
+        </div>
+        <p id="emptyMessage" class="empty-message" hidden>No articles matched your search.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container narrow">
+        <span class="tag">About</span>
+        <h2>Connecting research with practical industry opportunities.</h2>
+        <p>This project explores how advanced technology can support responsible marketing, intelligent products, and future-ready digital experiences.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div><span class="tag">Contact</span><h2>Have a research idea?</h2><p>Use the article tools to preview new work, or add the finished HTML file to this GitHub repository.</p></div>
+        <a class="button" href="https://github.com/tarunchowdary069-rgb/AdvanceMarketingIntegration" target="_blank" rel="noopener noreferrer">Open GitHub repository</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Advance Marketing Integration</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <dialog class="upload-dialog" id="uploadDialog">
+    <div class="dialog-header"><div><span class="tag">Article manager</span><h2>Upload an article</h2></div><button class="dialog-close" id="closeUploadDialog" type="button" aria-label="Close">×</button></div>
+    <p class="upload-notice"><strong>Preview only:</strong> GitHub Pages cannot save uploads permanently. Commit the final file to GitHub to publish it.</p>
+    <form id="articleUploadForm">
+      <div class="form-field"><label for="articleTitle">Article title</label><input id="articleTitle" type="text" maxlength="140" required></div>
+      <div class="form-field"><label for="articleSummary">Short description</label><textarea id="articleSummary" rows="4" maxlength="300" required></textarea></div>
+      <div class="form-field"><label for="articleCategory">Category</label><input id="articleCategory" type="text" maxlength="50" placeholder="Research article"></div>
+      <div class="form-field"><label for="articleFile">Article file</label><input id="articleFile" type="file" accept=".html,.htm,.pdf,.md,.txt" required></div>
+      <p class="form-status" id="uploadStatus" role="status"></p>
+      <div class="dialog-actions"><button class="button button-light" id="cancelUpload" type="button">Cancel</button><button class="button" type="submit">Add preview card</button></div>
+    </form>
+  </dialog>
+
+  <script>
+    const menuButton = document.querySelector("#menuButton");
+    const mainNav = document.querySelector("#mainNav");
+    menuButton.addEventListener("click", () => {
+      const open = mainNav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(open));
+    });
+    mainNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      mainNav.classList.remove("open"); menuButton.setAttribute("aria-expanded", "false");
+    }));
+
+    const themeToggle = document.querySelector("#themeToggle");
+    const themeIcon = document.querySelector("#themeIcon");
+    function updateThemeIcon() { themeIcon.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾"; }
+    updateThemeIcon();
+    themeToggle.addEventListener("click", () => {
+      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next; localStorage.setItem("ami-theme", next); updateThemeIcon();
+    });
+
+    const searchInput = document.querySelector("#searchInput");
+    const emptyMessage = document.querySelector("#emptyMessage");
+    searchInput.addEventListener("input", () => {
+      const q = searchInput.value.toLowerCase().trim(); let visible = 0;
+      document.querySelectorAll("#articleGrid .card").forEach(card => {
+        const show = card.textContent.toLowerCase().includes(q) || card.dataset.search.includes(q);
+        card.hidden = !show; if (show) visible++;
+      });
+      emptyMessage.hidden = visible !== 0;
+    });
+
+    const dialog = document.querySelector("#uploadDialog");
+    document.querySelector("#openUploadDialog").addEventListener("click", () => dialog.showModal());
+    document.querySelector("#closeUploadDialog").addEventListener("click", () => dialog.close());
+    document.querySelector("#cancelUpload").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
+    document.querySelector("#articleUploadForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const title = document.querySelector("#articleTitle").value.trim();
+      const summary = document.querySelector("#articleSummary").value.trim();
+      const category = document.querySelector("#articleCategory").value.trim() || "Research article";
+      const file = document.querySelector("#articleFile").files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      const card = document.createElement("article"); card.className = "card"; card.dataset.search = `${title} ${summary} ${category}`.toLowerCase();
+      const tag = document.createElement("span"); tag.className = "tag"; tag.textContent = category;
+      const time = document.createElement("time"); time.dateTime = new Date().toISOString().slice(0,10); time.textContent = new Date().toLocaleDateString("en-IN", {day:"numeric", month:"long", year:"numeric"});
+      const h3 = document.createElement("h3"); h3.textContent = title;
+      const p = document.createElement("p"); p.textContent = summary;
+      const a = document.createElement("a"); a.className = "card-link"; a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Open preview →";
+      card.append(tag, time, h3, p, a); document.querySelector("#articleGrid").prepend(card);
+      e.target.reset(); dialog.close(); card.scrollIntoView({behavior:"smooth", block:"center"});
+    });
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
