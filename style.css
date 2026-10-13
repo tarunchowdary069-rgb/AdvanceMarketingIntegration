@@ -712,3 +712,702 @@ html[data-theme="light"] .hero {
     background: rgba(3, 11, 24, 0.98);
   }
 }
+/* ==================================================
+   ARTICLE BACKGROUND AND TEXT VISIBILITY
+================================================== */
+
+.article-page {
+  min-height: 100vh;
+  margin: 0;
+  color: #e8f1ff;
+
+  background-color: #020817;
+  background-image:
+    linear-gradient(
+      rgba(2, 8, 23, 0.58),
+      rgba(2, 8, 23, 0.78)
+    ),
+    url("images/images/quantum-background.png");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.article-page main {
+  background: transparent;
+}
+
+.article-page .header,
+.article-page .site-header {
+  border-bottom: 1px solid rgba(125, 211, 252, 0.22);
+  background: rgba(3, 10, 24, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.article-page .brand,
+.article-page nav a,
+.article-page .nav-links a {
+  color: #e7efff;
+}
+
+.article-page nav a:hover,
+.article-page nav a:focus-visible {
+  color: #7dd3fc;
+}
+
+/* Article heading */
+
+.article-page .article-hero {
+  position: relative;
+  padding: 76px 0 58px;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 14, 36, 0.72),
+      rgba(20, 44, 96, 0.58)
+    );
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.article-page .article-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(900px, 92%);
+  margin-inline: auto;
+}
+
+.article-page .article-hero h1 {
+  margin: 16px 0;
+  color: #ffffff !important;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.9),
+    0 0 38px rgba(37, 99, 235, 0.45);
+}
+
+.article-page .subtitle {
+  max-width: 780px;
+  margin-bottom: 0;
+  color: #e1ecff !important;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.75;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.article-page .article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  color: #c2d1e7 !important;
+}
+
+.article-page .article-hero .tag {
+  color: #7dd3fc;
+}
+
+.article-page .back {
+  display: inline-flex;
+  margin-bottom: 22px;
+  color: #93c5fd;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Main article panel */
+
+.article-page .article {
+  width: min(960px, 92%);
+  margin: 48px auto 72px;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 24px;
+  background: rgba(5, 16, 36, 0.82) !important;
+  color: #dbe7f7 !important;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.article-page .article p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 0 1.45rem;
+  color: #d5e2f5 !important;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.article-page .article h2 {
+  margin: 48px 0 18px;
+  color: #ffffff !important;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.article-page .article h3 {
+  margin: 32px 0 12px;
+  color: #bfdbfe !important;
+  font-size: 1.3rem;
+}
+
+.article-page .article strong {
+  color: #ffffff;
+}
+
+.article-page .article ul,
+.article-page .article ol {
+  margin: 0 0 30px;
+  padding-left: 27px;
+}
+
+.article-page .article li {
+  margin-bottom: 12px;
+  color: #d5e2f5 !important;
+  font-size: 1.04rem;
+  line-height: 1.78;
+}
+
+.article-page .article a {
+  color: #7dd3fc;
+}
+
+/* Filled summary panel */
+
+.article-page .summary {
+  margin: 0 0 42px;
+  padding: clamp(24px, 4vw, 34px);
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  border-left: 6px solid #3b82f6;
+  border-radius: 15px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(13, 33, 69, 0.96),
+      rgba(20, 43, 88, 0.92)
+    ) !important;
+  color: #e7f0ff !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+.article-page .summary h2 {
+  margin: 10px 0 18px;
+  color: #ffffff !important;
+}
+
+.article-page .summary p,
+.article-page .summary li {
+  color: #dbe7f7 !important;
+}
+
+.article-page .summary-highlight {
+  margin-top: 22px !important;
+  padding: 16px 18px;
+  border-left: 4px solid #7dd3fc;
+  border-radius: 8px;
+  background: rgba(2, 12, 30, 0.58);
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Prevent theme rules from covering the background */
+
+html[data-theme="light"] .article-page,
+html[data-theme="dark"] .article-page {
+  background-color: #020817;
+  background-image:
+    linear-gradient(
+      rgba(2, 8, 23, 0.58),
+      rgba(2, 8, 23, 0.78)
+    ),
+    url("images/quantum-background.png");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+html[data-theme="light"] .article-page .article,
+html[data-theme="dark"] .article-page .article {
+  background: rgba(5, 16, 36, 0.82) !important;
+}
+
+@media (max-width: 760px) {
+  .article-page,
+  html[data-theme="light"] .article-page,
+  html[data-theme="dark"] .article-page {
+    background-attachment: scroll;
+  }
+
+  .article-page .article-hero {
+    padding: 55px 0 42px;
+  }
+
+  .article-page .article {
+    width: 94%;
+    margin: 25px auto 45px;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .article-page .article p,
+  .article-page .article li {
+    font-size: 1rem;
+  }
+}
+/* Uploaded preview controls */
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.card-actions .card-link {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 9px 15px;
+  border: 1px solid #2563eb;
+  border-radius: 9px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.delete-article {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px;
+  border: 1px solid #f87171;
+  border-radius: 9px;
+  background: transparent;
+  color: #dc2626;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.delete-article:hover,
+.delete-article:focus-visible {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .delete-article {
+  color: #fca5a5;
+}
+
+@media (max-width: 520px) {
+  .card-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .card-actions .card-link,
+  .delete-article {
+    width: 100%;
+  }
+}
+.article-page {
+  min-height: 100vh;
+  margin: 0;
+  color: #e8f1ff;
+  background-color: #020817;
+  background-image:
+    linear-gradient(
+      rgba(2, 8, 23, 0.58),
+      rgba(2, 8, 23, 0.78)
+    ),
+    url("images/images/quantum-background.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.article-page main {
+  background: transparent;
+}
+
+.article-page .article-hero {
+  padding: 76px 0 58px;
+  background: rgba(4, 14, 36, 0.68);
+}
+
+.article-page .article-hero h1 {
+  color: #ffffff;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9);
+}
+
+.article-page .subtitle,
+.article-page .article-meta {
+  color: #dbeafe;
+}
+
+.article-page .article {
+  width: min(960px, 92%);
+  margin: 48px auto 72px;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 24px;
+  background: rgba(5, 16, 36, 0.86);
+  color: #dbe7f7;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.article-page .article p,
+.article-page .article li {
+  visibility: visible;
+  opacity: 1;
+  color: #d5e2f5;
+}
+
+.article-page .article h2 {
+  color: #ffffff;
+}
+
+.article-page .article h3 {
+  color: #bfdbfe;
+}
+
+.article-page .summary {
+  padding: 28px;
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  border-left: 6px solid #3b82f6;
+  border-radius: 15px;
+  background: rgba(13, 33, 69, 0.96);
+}
+
+.article-page .summary p,
+.article-page .summary li {
+  color: #dbe7f7;
+}
+
+.article-page .summary-highlight {
+  padding: 16px 18px;
+  border-left: 4px solid #7dd3fc;
+  border-radius: 8px;
+  background: rgba(2, 12, 30, 0.58);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.article-page .flow {
+  overflow-x: auto;
+  padding: 20px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #020817;
+  color: #dbeafe;
+  white-space: pre;
+}
+
+.article-page .equation {
+  overflow-x: auto;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(30, 58, 138, 0.4);
+  color: #ffffff;
+  text-align: center;
+}
+
+.article-page .responsive-table {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.article-page table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.article-page th,
+.article-page td {
+  padding: 15px;
+  border: 1px solid #40516a;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-page th {
+  background: #173b8f;
+  color: #ffffff;
+}
+
+.article-page td {
+  background: rgba(8, 23, 47, 0.9);
+  color: #dbe7f7;
+}
+
+.article-page .note {
+  margin-top: 46px;
+  padding: 20px;
+  border: 1px solid #d8a84e;
+  border-radius: 12px;
+  background: rgba(75, 51, 11, 0.75);
+  color: #fde7b0;
+}
+
+@media (max-width: 760px) {
+  .article-page {
+    background-attachment: scroll;
+  }
+
+  .article-page .article {
+    width: 94%;
+    padding: 24px 20px;
+  }
+}
+.article-page {
+  min-height: 100vh;
+  margin: 0;
+  color: #e8f1ff;
+  background-color: #020817;
+  background-image:
+    linear-gradient(
+      rgba(2, 8, 23, 0.58),
+      rgba(2, 8, 23, 0.78)
+    ),
+    url("images/images/quantum-background.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.article-page main {
+  background: transparent;
+}
+
+.article-page .article-hero {
+  padding: 76px 0 58px;
+  background: rgba(4, 14, 36, 0.68);
+}
+
+.article-page .article-hero h1 {
+  color: #ffffff;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9);
+}
+
+.article-page .subtitle,
+.article-page .article-meta {
+  color: #dbeafe;
+}
+
+.article-page .article {
+  width: min(960px, 92%);
+  margin: 48px auto 72px;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 24px;
+  background: rgba(5, 16, 36, 0.86);
+  color: #dbe7f7;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+}
+
+.article-page .article p,
+.article-page .article li {
+  visibility: visible;
+  opacity: 1;
+  color: #d5e2f5;
+}
+
+.article-page .article h2 {
+  color: #ffffff;
+}
+
+.article-page .article h3 {
+  color: #bfdbfe;
+}
+
+.article-page .summary {
+  padding: 28px;
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  border-left: 6px solid #3b82f6;
+  border-radius: 15px;
+  background: rgba(13, 33, 69, 0.96);
+}
+
+.article-page .summary p,
+.article-page .summary li {
+  color: #dbe7f7;
+}
+
+.article-page .summary-highlight {
+  padding: 16px 18px;
+  border-left: 4px solid #7dd3fc;
+  border-radius: 8px;
+  background: rgba(2, 12, 30, 0.58);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.article-page .flow {
+  overflow-x: auto;
+  padding: 20px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #020817;
+  color: #dbeafe;
+  white-space: pre;
+}
+
+.article-page .equation {
+  overflow-x: auto;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(30, 58, 138, 0.4);
+  color: #ffffff;
+  text-align: center;
+}
+
+.article-page .responsive-table {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.article-page table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.article-page th,
+.article-page td {
+  padding: 15px;
+  border: 1px solid #40516a;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-page th {
+  background: #173b8f;
+  color: #ffffff;
+}
+
+.article-page td {
+  background: rgba(8, 23, 47, 0.9);
+  color: #dbe7f7;
+}
+
+.article-page .note {
+  margin-top: 46px;
+  padding: 20px;
+  border: 1px solid #d8a84e;
+  border-radius: 12px;
+  background: rgba(75, 51, 11, 0.75);
+  color: #fde7b0;
+}
+
+@media (max-width: 760px) {
+  .article-page {
+    background-attachment: scroll;
+  }
+
+  .article-page .article {
+    width: 94%;
+    padding: 24px 20px;
+  }
+}
+/* =========================================
+   FINAL BACKGROUND IMAGE PATH CORRECTION
+========================================= */
+
+/* Homepage background */
+body:not(.article-page) {
+  min-height: 100vh;
+  background-color: #030b18 !important;
+  background-image:
+    linear-gradient(
+      rgba(3, 11, 24, 0.24),
+      rgba(3, 11, 24, 0.48)
+    ),
+    url("images/images/quantum-background.png") !important;
+
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+/* Prevent the hero from hiding the body image */
+body:not(.article-page) main,
+body:not(.article-page) .hero {
+  background: transparent !important;
+}
+
+/* Keep the image visible behind the content sections */
+body:not(.article-page) .section {
+  background: rgba(5, 16, 36, 0.7) !important;
+  color: #e8f1ff;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+body:not(.article-page) .section.alt {
+  background: rgba(10, 25, 52, 0.74) !important;
+}
+
+/* Article background */
+.article-page {
+  min-height: 100vh;
+  background-color: #020817 !important;
+  background-image:
+    linear-gradient(
+      rgba(2, 8, 23, 0.42),
+      rgba(2, 8, 23, 0.66)
+    ),
+    url("images/images/quantum-background.png") !important;
+
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+html[data-theme="light"] body:not(.article-page),
+html[data-theme="dark"] body:not(.article-page) {
+  background-image:
+    linear-gradient(
+      rgba(3, 11, 24, 0.24),
+      rgba(3, 11, 24, 0.48)
+    ),
+    url("images/images/quantum-background.png") !important;
+}
+
+html[data-theme="light"] .article-page,
+html[data-theme="dark"] .article-page {
+  background-image:
+    linear-gradient(
+      rgba(2, 8, 23, 0.42),
+      rgba(2, 8, 23, 0.66)
+    ),
+    url("images/images/quantum-background.png") !important;
+}
+
+@media (max-width: 760px) {
+  body:not(.article-page),
+  .article-page {
+    background-attachment: scroll !important;
+  }
+}

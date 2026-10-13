@@ -28,12 +28,168 @@ const menuButton = document.querySelector("#menuButton");
       emptyMessage.hidden = visible !== 0;
     });
 
-    const dialog = document.querySelector("#uploadDialog");
-    document.querySelector("#openUploadDialog").addEventListener("click", () => dialog.showModal());
-    document.querySelector("#closeUploadDialog").addEventListener("click", () => dialog.close());
-    document.querySelector("#cancelUpload").addEventListener("click", () => dialog.close());
-    dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
-    document.querySelector("#articleUploadForm").addEventListener("submit", e => {
+   const uploadForm = document.querySelector("#articleUploadForm");
+const articleGrid = document.querySelector("#articleGrid");
+const uploadDialog = document.querySelector("#uploadDialog");
+
+if (uploadForm && articleGrid && uploadDialog) {
+  uploadForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const title = document
+      .querySelector("#articleTitle")
+      .value
+      .trim();
+
+    const summary = document
+      .querySelector("#articleSummary")
+      .value
+      .trim();
+
+    const category =
+      document
+        .querySelector("#articleCategory")
+        .value
+        .trim() || "Research article";
+
+    const file =
+      document.querySelector("#articleFile").files[0];
+
+    const status =
+      document.querySelector("#uploadStatus");
+
+    if (!title || !summary || !file) {
+      if (status) {
+        status.textContent =
+          "Enter the title, description, and article file.";
+      }
+
+      return;
+    }
+
+    const allowedExtensions = [
+      ".html",
+      ".htm",
+      ".pdf",
+      ".md",
+      ".txt"
+    ];
+
+    const filename = file.name.toLowerCase();
+
+    const validFile = allowedExtensions.some((extension) =>
+      filename.endsWith(extension)
+    );
+
+    if (!validFile) {
+      if (status) {
+        status.textContent =
+          "Select an HTML, PDF, Markdown, or text file.";
+      }
+
+      return;
+    }
+
+    const articleURL = URL.createObjectURL(file);
+
+    const card = document.createElement("article");
+    card.className = "card uploaded-card";
+
+    card.dataset.search =
+      `${title} ${summary} ${category}`.toLowerCase();
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = category;
+
+    const time = document.createElement("time");
+    const currentDate = new Date();
+
+    time.dateTime =
+      currentDate.toISOString().slice(0, 10);
+
+    time.textContent =
+      currentDate.toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+
+    const description = document.createElement("p");
+    description.textContent = summary;
+
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+
+    const openLink = document.createElement("a");
+    openLink.className = "card-link";
+    openLink.href = articleURL;
+    openLink.target = "_blank";
+    openLink.rel = "noopener";
+    openLink.textContent = "Open preview →";
+
+    const deleteButton =
+      document.createElement("button");
+
+    deleteButton.className = "delete-article";
+    deleteButton.type = "button";
+    deleteButton.textContent = "Delete article";
+
+    deleteButton.setAttribute(
+      "aria-label",
+      `Delete uploaded article: ${title}`
+    );
+
+    deleteButton.addEventListener("click", () => {
+      const confirmed = window.confirm(
+        `Delete the preview article "${title}"?`
+      );
+
+      if (!confirmed) {
+        return;
+      }
+
+      URL.revokeObjectURL(articleURL);
+      card.remove();
+
+      const searchInput =
+        document.querySelector("#searchInput");
+
+      if (searchInput) {
+        searchInput.dispatchEvent(
+          new Event("input")
+        );
+      }
+    });
+
+    actions.append(openLink, deleteButton);
+
+    card.append(
+      tag,
+      time,
+      heading,
+      description,
+      actions
+    );
+
+    articleGrid.prepend(card);
+    uploadForm.reset();
+
+    if (status) {
+      status.textContent = "";
+    }
+
+    uploadDialog.close();
+
+    card.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  });
+}
       e.preventDefault();
       const title = document.querySelector("#articleTitle").value.trim();
       const summary = document.querySelector("#articleSummary").value.trim();
@@ -49,5 +205,5 @@ const menuButton = document.querySelector("#menuButton");
       const a = document.createElement("a"); a.className = "card-link"; a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Open preview →";
       card.append(tag, time, h3, p, a); document.querySelector("#articleGrid").prepend(card);
       e.target.reset(); dialog.close(); card.scrollIntoView({behavior:"smooth", block:"center"});
-    });
+    ;
     document.querySelector("#year").textContent = new Date().getFullYear();
