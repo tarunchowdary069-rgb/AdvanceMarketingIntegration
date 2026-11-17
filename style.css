@@ -1411,3 +1411,418 @@ html[data-theme="dark"] .article-page {
     background-attachment: scroll !important;
   }
 }
+/* =====================================================
+   HEALTHCARE ARTICLE: FULL-PAGE BACKGROUND
+   This affects only quantum-technologies-healthcare-systems.html
+   ===================================================== */
+
+body.qh-page.healthcare-article-page {
+  min-height: 100%;
+  margin: 0;
+
+  background-color: #06152c;
+
+  background-image:
+    linear-gradient(
+      rgba(4, 15, 35, 0.86),
+      rgba(7, 24, 50, 0.84)
+    ),
+    url("images/images/quantum-healthcare-hero.webp");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Remove opaque backgrounds inherited from style.css */
+.qh-page main,
+.qh-page article,
+.qh-page .qh-article {
+  background: transparent !important;
+}
+
+/* Keep the top hero transparent because the body owns the image */
+.qh-page .qh-hero,
+.qh-page.has-hero-image .qh-hero {
+  background: transparent !important;
+  background-image: none !important;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+}
+
+/* Full-width dark overlay behind the article reading area */
+.qh-page .qh-article {
+  position: relative;
+  padding: 64px 0 90px;
+}
+
+/* Glass-style article content column */
+.qh-page .qh-reading {
+  width: min(960px, 92%);
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 48px);
+
+  color: #17233a;
+  background: rgba(250, 252, 255, 0.93);
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 22px;
+
+  box-shadow:
+    0 24px 70px rgba(0, 8, 25, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Hero typography */
+.qh-page .qh-hero h1 {
+  max-width: 950px;
+  margin: 16px 0 22px;
+
+  color: #ffffff;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.05;
+
+  text-shadow:
+    0 3px 18px rgba(0, 0, 0, 0.75),
+    0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.qh-page .qh-deck,
+.qh-page .qh-meta,
+.qh-page .qh-kicker {
+  color: #f1f7ff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+}
+
+.qh-page .qh-deck {
+  max-width: 820px;
+}
+
+.qh-page .qh-back {
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.qh-page .qh-back:hover {
+  text-decoration: underline;
+}
+
+/* Article contents panel */
+.qh-page .qh-toc {
+  margin-top: 0;
+  margin-bottom: 38px;
+
+  background: rgba(239, 246, 255, 0.95);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  box-shadow: 0 12px 30px rgba(16, 43, 88, 0.12);
+}
+
+/* Improve headings inside the reading panel */
+.qh-page .qh-reading h2 {
+  color: #0b3478;
+}
+
+.qh-page .qh-reading h3 {
+  color: #163f7a;
+}
+
+/* Preserve readable component surfaces */
+.qh-page .qh-summary,
+.qh-page .qh-callout,
+.qh-page .qh-case,
+.qh-page .qh-table-region,
+.qh-page .qh-glossary > div {
+  background-color: rgba(248, 251, 255, 0.96);
+}
+
+/* Keep reference links visible */
+.qh-page .qh-reading a {
+  color: #174ea6;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+/* Article-specific footer */
+.qh-page footer {
+  color: #ffffff;
+  background: rgba(3, 12, 29, 0.9);
+  border-top: 1px solid rgba(125, 211, 252, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Accessible keyboard focus */
+.qh-page a:focus-visible,
+.qh-page summary:focus-visible,
+.qh-page [tabindex="0"]:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 4px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 760px) {
+  body.qh-page.healthcare-article-page {
+    /*
+      Fixed backgrounds can perform poorly on mobile browsers.
+      Using scroll preserves smooth mobile performance.
+    */
+    background-attachment: scroll;
+    background-position: 58% top;
+  }
+
+  .qh-page .qh-hero {
+    min-height: auto;
+    padding: 54px 0 48px;
+  }
+
+  .qh-page .qh-hero h1 {
+    font-size: clamp(2rem, 11vw, 3.2rem);
+    line-height: 1.08;
+  }
+
+  .qh-page .qh-reading {
+    width: min(94%, 960px);
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .qh-page .qh-article {
+    padding: 30px 0 54px;
+  }
+
+  .qh-page .qh-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  body.qh-page.healthcare-article-page {
+    background-position: 62% top;
+  }
+
+  .qh-page .qh-reading {
+    width: 95%;
+    padding: 18px 14px;
+  }
+
+  .qh-page .qh-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .qh-page .qh-deck {
+    font-size: 1rem;
+  }
+}
+
+/* Users who prefer reduced visual effects */
+@media (prefers-reduced-motion: reduce) {
+  body.qh-page.healthcare-article-page {
+    background-attachment: scroll;
+  }
+}
+
+/* Clean printed version */
+/* Clean printed version */
+@media print {
+  body.qh-page.healthcare-article-page {
+    color: #000;
+    background: #fff !important;
+  }
+
+  .qh-page .qh-reading {
+    width: 100%;
+    padding: 0;
+    background: #fff;
+    border: 0;
+    box-shadow: none;
+  }
+}
+/* NEW HEALTHCARE IMAGE AS THE FULL-PAGE BACKGROUND */
+body.qh-page.has-hero-image {
+  min-height: 100vh;
+  margin: 0;
+  color: #e8f1ff;
+ background-color: #06152c !important;
+  background-image:
+    linear-gradient(
+      rgba(3, 12, 29, 0.60),
+      rgba(4, 16, 38, 0.84)
+    ),
+    url("images/images/quantum-healthcare-hero.webp") !important;
+
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+/* Do not allow the article area to hide the new background */
+body.qh-page.has-hero-image main,
+body.qh-page.has-hero-image main > article,
+body.qh-page.has-hero-image .qh-article {
+  background: transparent !important;
+}
+/* Display the same new picture in the hero */
+body.qh-page.has-hero-image .qh-hero {
+  min-height: 620px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(2, 9, 27, 0.88) 0%,
+      rgba(3, 17, 40, 0.60) 52%,
+      rgba(2, 10, 26, 0.34) 100%
+    ),
+    url("images/images/quantum-healthcare-hero.webp") !important;
+
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+}
+
+/* Old-style readable article panel */
+body.qh-page.has-hero-image .qh-reading {
+  width: min(960px, 92%);
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 60px);
+
+  border: 1px solid rgba(125, 211, 252, 0.26);
+  border-radius: 24px;
+
+  background: rgba(5, 16, 36, 0.89) !important;
+  color: #dbe7f7 !important;
+
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Readable text */
+body.qh-page.has-hero-image .qh-reading p,
+body.qh-page.has-hero-image .qh-reading li,
+body.qh-page.has-hero-image .qh-reading dd {
+  color: #d5e2f5 !important;
+}
+
+body.qh-page.has-hero-image .qh-reading h2 {
+  color: #ffffff !important;
+}
+
+body.qh-page.has-hero-image .qh-reading h3 {
+  color: #bfdbfe !important;
+}
+
+body.qh-page.has-hero-image .qh-reading strong,
+body.qh-page.has-hero-image .qh-reading dt {
+  color: #ffffff !important;
+}
+
+body.qh-page.has-hero-image .qh-reading a {
+  color: #7dd3fc !important;
+}
+
+/* Dark readable contents panel */
+body.qh-page.has-hero-image .qh-toc {
+  border-color: rgba(125, 211, 252, 0.30);
+  background: rgba(13, 33, 69, 0.96) !important;
+  color: #dbe7f7 !important;
+}
+
+body.qh-page.has-hero-image .qh-toc summary {
+  color: #ffffff !important;
+}
+
+body.qh-page.has-hero-image .qh-toc a {
+  color: #7dd3fc !important;
+}
+
+/* Summary, cards, callouts and case studies */
+body.qh-page.has-hero-image .qh-summary,
+body.qh-page.has-hero-image .qh-callout,
+body.qh-page.has-hero-image .qh-card,
+body.qh-page.has-hero-image .qh-case,
+body.qh-page.has-hero-image .qh-glossary > div {
+  border-color: rgba(125, 211, 252, 0.25);
+  background: rgba(8, 23, 47, 0.95) !important;
+  color: #dbe7f7 !important;
+}
+
+body.qh-page.has-hero-image .qh-summary {
+  border-left: 6px solid #3b82f6;
+}
+
+body.qh-page.has-hero-image .qh-callout {
+  border-left: 6px solid #06b6d4;
+}
+
+body.qh-page.has-hero-image .qh-card h3,
+body.qh-page.has-hero-image .qh-case h3,
+body.qh-page.has-hero-image .qh-case dt,
+body.qh-page.has-hero-image .qh-glossary dt {
+  color: #ffffff !important;
+}
+
+/* Quotations */
+body.qh-page.has-hero-image .qh-quote {
+  border-left-color: #8b5cf6;
+  background: rgba(45, 25, 90, 0.80) !important;
+  color: #ffffff !important;
+}
+
+/* Tables */
+body.qh-page.has-hero-image .qh-table-region {
+  border-color: rgba(125, 211, 252, 0.27);
+  background: rgba(8, 23, 47, 0.96) !important;
+}
+
+body.qh-page.has-hero-image .qh-table caption {
+  background: rgba(20, 43, 88, 0.98) !important;
+  color: #ffffff !important;
+}
+
+body.qh-page.has-hero-image .qh-table th {
+  border-color: #40516a !important;
+  background: #173b8f !important;
+  color: #ffffff !important;
+}
+
+body.qh-page.has-hero-image .qh-table td {
+  border-color: #40516a !important;
+  background: rgba(8, 23, 47, 0.97) !important;
+  color: #dbe7f7 !important;
+}
+
+/* Disclaimer */
+body.qh-page.has-hero-image .qh-disclaimer {
+  border-color: rgba(216, 168, 78, 0.78);
+  background: rgba(75, 51, 11, 0.88) !important;
+  color: #fde7b0 !important;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  body.qh-page.has-hero-image {
+    background-attachment: scroll !important;
+    background-position: 58% top !important;
+  }
+
+  body.qh-page.has-hero-image .qh-hero {
+    min-height: auto;
+    background-position: 60% top !important;
+  }
+
+  body.qh-page.has-hero-image .qh-reading {
+    width: 94%;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+}
