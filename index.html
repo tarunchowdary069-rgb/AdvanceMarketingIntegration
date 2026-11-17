@@ -1,211 +1,827 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="description"
+    content="Research-oriented articles on marketing, artificial intelligence, quantum computing, healthcare, VLSI, embedded systems and humanoid robotics."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Advance Marketing Integration">
+  <meta name="theme-color" content="#071426">
+
+  <link
+    rel="canonical"
+    href="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/"
+  >
+
+  <meta
+    property="og:title"
+    content="Advance Marketing Integration"
+  >
+
+  <meta
+    property="og:description"
+    content="Research on marketing, AI, quantum computing, healthcare, embedded systems and robotics."
+  >
+
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:url"
+    content="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/images/images/quantum-healthcare-hero.webp"
+  >
+
   <title>
-    Quantum Technologies in Healthcare: Present State and Future Prospects
+    Advance Marketing Integration | Research and Marketing Updates
   </title>
 
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Existing healthcare article CSS */
+    /*
+      This section ensures that all three article cards appear
+      in one row on large screens.
+    */
 
-    /* Paste the new full-page CSS here */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .card p {
+      flex-grow: 1;
+    }
+
+    .card-link {
+      margin-top: auto;
+    }
+
+    /*
+      Optional image displayed on the healthcare article card.
+    */
+
+    .card-image {
+      width: 100%;
+      height: 190px;
+      margin-bottom: 1.25rem;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+
+    /*
+      Ensure the newest healthcare article receives
+      slightly stronger visual emphasis.
+    */
+
+    .card-newest {
+      border-color: #22d3ee;
+      box-shadow: 0 18px 45px rgba(34, 211, 238, 0.12);
+    }
+
+    /*
+      Two cards per row on tablets.
+    */
+
+    @media (max-width: 980px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /*
+      One card per row on phones.
+    */
+
+    @media (max-width: 680px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card-image {
+        height: 210px;
+      }
+    }
   </style>
-</head>
 
-<body class="qh-page healthcare-article-page">
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Research-oriented articles on marketing, AI, quantum computing, VLSI, embedded systems, and humanoid robotics.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Advance Marketing Integration">
-  <meta name="theme-color" content="#071426">
-  <link rel="canonical" href="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/">
-  <meta property="og:title" content="Advance Marketing Integration">
-  <meta property="og:description" content="Research on marketing, AI, quantum computing, embedded systems, and robotics.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tarunchowdary069-rgb.github.io/AdvanceMarketingIntegration/">
-  <title>Advance Marketing Integration | Research and Marketing Updates</title>
-  <link rel="stylesheet" href="style.css">
   <script>
     try {
-      const saved = localStorage.getItem("ami-theme");
-      const theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.dataset.theme = theme;
-    } catch (_) {}
+      const savedTheme = localStorage.getItem("ami-theme");
+
+      const preferredTheme =
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+
+      document.documentElement.dataset.theme =
+        savedTheme || preferredTheme;
+    } catch (error) {
+      document.documentElement.dataset.theme = "dark";
+    }
   </script>
 </head>
-<body>
-  <a class="skip-link" href="#mainContent">Skip to main content</a>
 
+<body>
+  <a class="skip-link" href="#mainContent">
+    Skip to main content
+  </a>
+
+  <!-- Header and navigation -->
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#home">Advance Marketing Integration</a>
+      <a class="brand" href="#home">
+        Advance Marketing Integration
+      </a>
+
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">
-          <span id="themeIcon" aria-hidden="true">☾</span><span class="theme-label">Theme</span>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch color theme"
+        >
+          <span id="themeIcon" aria-hidden="true">☾</span>
+          <span class="theme-label">Theme</span>
         </button>
-        <button class="menu-button" id="menuButton" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">☰</button>
+
+        <button
+          class="menu-button"
+          id="menuButton"
+          type="button"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
       </div>
+
       <nav id="mainNav" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#updates">Articles</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#updates">Articles</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="mainContent">
+    <!-- Hero section -->
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="tag">Marketing, technology and industry</span>
-          <h1>Research for the next generation of digital industry.</h1>
-          <p class="hero-copy">Explore accessible, research-oriented articles connecting marketing, artificial intelligence, quantum computing, VLSI, embedded systems, and humanoid robotics.</p>
+          <span class="tag">
+            Marketing, technology and industry
+          </span>
+
+          <h1>
+            Research for the next generation of digital industry.
+          </h1>
+
+          <p class="hero-copy">
+            Explore accessible, research-oriented articles connecting
+            marketing, artificial intelligence, quantum computing,
+            healthcare, VLSI, embedded systems and humanoid robotics.
+          </p>
+
           <div class="hero-actions">
-            <a class="button" href="#updates">Explore articles</a>
-            <a class="button button-secondary" href="#about">About this project</a>
+            <a class="button" href="#updates">
+              Explore articles
+            </a>
+
+            <a class="button button-secondary" href="#about">
+              About this project
+            </a>
           </div>
         </div>
-        <aside class="featured" aria-labelledby="featuredTitle">
+
+        <!-- Only the new healthcare article is featured here -->
+        <aside
+          class="featured"
+          aria-labelledby="featuredTitle"
+        >
           <small>LATEST ARTICLE</small>
-          <h2 id="featuredTitle">Quantum Synergies in Cyber-Physical Systems</h2>
-          <p>A strategic examination of quantum-ready web systems, responsible marketing, embedded VLSI, intelligent actuators, and India's humanoid-robotics opportunity.</p>
-          <a class="featured-link" href="future-of-search-marketing.html">Read the quantum article →</a>
+
+          <h2 id="featuredTitle">
+            Quantum Technologies in Healthcare Systems
+          </h2>
+
+          <p>
+            Explore how quantum computing, quantum sensing,
+            precision medicine, medical imaging and secure hybrid
+            architectures could transform modern healthcare systems.
+          </p>
+
+          <a
+            class="featured-link"
+            href="quantum-technologies-healthcare-systems.html"
+          >
+            Read the quantum healthcare article →
+          </a>
         </aside>
       </div>
     </section>
 
+    <!-- Articles section -->
     <section id="updates" class="section">
       <div class="container">
         <div class="section-heading">
           <div>
             <span class="tag">Information center</span>
+
             <h2>Latest articles</h2>
-            <p>Search the complete collection of published research and marketing articles.</p>
+
+            <p>
+              Search the complete collection of published research,
+              technology and marketing articles.
+            </p>
           </div>
+
           <div class="article-tools">
-            <label class="visually-hidden" for="searchInput">Search articles</label>
-            <input id="searchInput" type="search" placeholder="Search articles">
-            <button class="button" id="openUploadDialog" type="button">Upload an article</button>
+            <label class="visually-hidden" for="searchInput">
+              Search articles
+            </label>
+
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search articles"
+              autocomplete="off"
+            >
+
+            <button
+              class="button"
+              id="openUploadDialog"
+              type="button"
+            >
+              Upload an article
+            </button>
           </div>
         </div>
 
+        <!-- All three articles are displayed in one row on desktop -->
         <div class="cards" id="articleGrid">
-          <article class="card" data-search="quantum cyber physical systems humanoid robotics vlsi embedded">
-            <span class="tag">Quantum systems</span>
-            <time datetime="2026-10-13">October 13, 2026</time>
-            <h3>Quantum Synergies in Cyber-Physical Systems</h3>
-            <p>Quantum-ready web systems, embedded VLSI, intelligent actuators, and India's humanoid-robotics opportunity.</p>
-            <a class="card-link" href="future-of-search-marketing.html">Read article →</a>
+
+          <!-- Article 1: New healthcare article -->
+          <article
+            class="card card-newest"
+            data-search="quantum technologies healthcare systems computing sensing medical imaging precision medicine therapeutics hospitals"
+          >
+            <img
+              class="card-image"
+              src="images/images/quantum-healthcare-hero.webp"
+              alt="Conceptual representation of quantum technology applications in healthcare"
+              loading="lazy"
+            >
+
+            <span class="tag">Quantum healthcare</span>
+
+            <time datetime="2026-11-18">
+              November 18, 2026
+            </time>
+
+            <h3>
+              Quantum Technologies in Healthcare Systems
+            </h3>
+
+            <p>
+              A research-oriented examination of quantum computing,
+              quantum sensing, precision medicine, medical imaging,
+              therapeutics and hybrid hospital architectures.
+            </p>
+
+            <a
+              class="card-link"
+              href="quantum-technologies-healthcare-systems.html"
+            >
+              Read article →
+            </a>
           </article>
 
-          <article class="card" data-search="verifiability artificial intelligence responsible marketing trust">
+          <!-- Article 2: Quantum cyber-physical systems -->
+          <article
+            class="card"
+            data-search="quantum cyber physical systems humanoid robotics vlsi embedded technology marketing"
+          >
+            <span class="tag">Quantum systems</span>
+
+            <time datetime="2026-10-13">
+              October 13, 2026
+            </time>
+
+            <h3>
+              Quantum Synergies in Cyber-Physical Systems
+            </h3>
+
+            <p>
+              Quantum-ready web systems, embedded VLSI,
+              intelligent actuators and India's emerging
+              humanoid-robotics opportunity.
+            </p>
+
+            <a
+              class="card-link"
+              href="future-of-search-marketing.html"
+            >
+              Read article →
+            </a>
+          </article>
+
+          <!-- Article 3: Verifiability Revolution -->
+          <article
+            class="card"
+            data-search="verifiability artificial intelligence responsible AI marketing trust transparency evidence"
+          >
             <span class="tag">Responsible AI</span>
-            <time datetime="2026-10-13">October 13, 2026</time>
-            <h3>The Verifiability Revolution</h3>
-            <p>How transparent evidence and responsible systems can strengthen credibility in digital communication.</p>
-            <a class="card-link" href="verifiability-revolution.html">Read article →</a>
+
+            <time datetime="2026-10-13">
+              October 13, 2026
+            </time>
+
+            <h3>
+              The Verifiability Revolution
+            </h3>
+
+            <p>
+              How transparent evidence, responsible artificial
+              intelligence and verifiable systems can strengthen
+              credibility in digital communication.
+            </p>
+
+            <a
+              class="card-link"
+              href="verifiability-revolution.html"
+            >
+              Read article →
+            </a>
           </article>
         </div>
-        <p id="emptyMessage" class="empty-message" hidden>No articles matched your search.</p>
+
+        <p
+          id="emptyMessage"
+          class="empty-message"
+          role="status"
+          hidden
+        >
+          No articles matched your search.
+        </p>
       </div>
     </section>
 
+    <!-- About section -->
     <section id="about" class="section alt">
       <div class="container narrow">
         <span class="tag">About</span>
-        <h2>Connecting research with practical industry opportunities.</h2>
-        <p>This project explores how advanced technology can support responsible marketing, intelligent products, and future-ready digital experiences.</p>
+
+        <h2>
+          Connecting research with practical industry opportunities.
+        </h2>
+
+        <p>
+          Advance Marketing Integration explores how advanced
+          technologies can support responsible marketing,
+          intelligent products, healthcare innovation and
+          future-ready digital experiences.
+        </p>
       </div>
     </section>
 
+    <!-- Contact section -->
     <section id="contact" class="section">
       <div class="container contact">
-        <div><span class="tag">Contact</span><h2>Have a research idea?</h2><p>Use the article tools to preview new work, or add the finished HTML file to this GitHub repository.</p></div>
-        <a class="button" href="https://github.com/tarunchowdary069-rgb/AdvanceMarketingIntegration" target="_blank" rel="noopener noreferrer">Have a question, collaboration proposal, or research idea? Contact me directly by email.
+        <div>
+          <span class="tag">Contact</span>
 
-Email: tarunchowdary4447@gmail.com</a>
+          <h2>Have a research idea?</h2>
+
+          <p>
+            Have a question, collaboration proposal or research idea?
+            Contact Advance Marketing Integration directly by email.
+          </p>
+        </div>
+
+        <a
+          class="button"
+          href="mailto:tarunchowdary4447@gmail.com?subject=Advance%20Marketing%20Integration%20Enquiry"
+        >
+          Email Advance Marketing Integration
+        </a>
       </div>
     </section>
   </main>
 
-  <footer><div class="container footer-inner"><span>© <span id="year"></span> Advance Marketing Integration</span><a href="#home">Back to top ↑</a></div></footer>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span>
+        © <span id="year"></span>
+        Advance Marketing Integration
+      </span>
 
+      <a href="#home">
+        Back to top ↑
+      </a>
+    </div>
+  </footer>
+
+  <!-- Article upload preview dialog -->
   <dialog class="upload-dialog" id="uploadDialog">
-    <div class="dialog-header"><div><span class="tag">Article manager</span><h2>Upload an article</h2></div><button class="dialog-close" id="closeUploadDialog" type="button" aria-label="Close">×</button></div>
-    <p class="upload-notice"><strong>Preview only:</strong> GitHub Pages cannot save uploads permanently. Commit the final file to GitHub to publish it.</p>
+    <div class="dialog-header">
+      <div>
+        <span class="tag">Article manager</span>
+        <h2>Upload an article</h2>
+      </div>
+
+      <button
+        class="dialog-close"
+        id="closeUploadDialog"
+        type="button"
+        aria-label="Close article upload dialog"
+      >
+        ×
+      </button>
+    </div>
+
+    <p class="upload-notice">
+      <strong>Preview only:</strong>
+      GitHub Pages cannot save uploads permanently. Commit the final
+      article file to the GitHub repository to publish it permanently.
+    </p>
+
     <form id="articleUploadForm">
-      <div class="form-field"><label for="articleTitle">Article title</label><input id="articleTitle" type="text" maxlength="140" required></div>
-      <div class="form-field"><label for="articleSummary">Short description</label><textarea id="articleSummary" rows="4" maxlength="300" required></textarea></div>
-      <div class="form-field"><label for="articleCategory">Category</label><input id="articleCategory" type="text" maxlength="50" placeholder="Research article"></div>
-      <div class="form-field"><label for="articleFile">Article file</label><input id="articleFile" type="file" accept=".html,.htm,.pdf,.md,.txt" required></div>
-      <p class="form-status" id="uploadStatus" role="status"></p>
-      <div class="dialog-actions"><button class="button button-light" id="cancelUpload" type="button">Cancel</button><button class="button" type="submit">Add preview card</button></div>
+      <div class="form-field">
+        <label for="articleTitle">
+          Article title
+        </label>
+
+        <input
+          id="articleTitle"
+          type="text"
+          maxlength="140"
+          required
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="articleSummary">
+          Short description
+        </label>
+
+        <textarea
+          id="articleSummary"
+          rows="4"
+          maxlength="300"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="articleCategory">
+          Category
+        </label>
+
+        <input
+          id="articleCategory"
+          type="text"
+          maxlength="50"
+          placeholder="Research article"
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="articleFile">
+          Article file
+        </label>
+
+        <input
+          id="articleFile"
+          type="file"
+          accept=".html,.htm,.pdf,.md,.txt"
+          required
+        >
+      </div>
+
+      <p
+        class="form-status"
+        id="uploadStatus"
+        role="status"
+      ></p>
+
+      <div class="dialog-actions">
+        <button
+          class="button button-light"
+          id="cancelUpload"
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button class="button" type="submit">
+          Add preview card
+        </button>
+      </div>
     </form>
   </dialog>
 
   <script>
+    /*
+      Mobile navigation
+    */
+
     const menuButton = document.querySelector("#menuButton");
     const mainNav = document.querySelector("#mainNav");
-    menuButton.addEventListener("click", () => {
-      const open = mainNav.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(open));
-    });
-    mainNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      mainNav.classList.remove("open"); menuButton.setAttribute("aria-expanded", "false");
-    }));
 
-    const themeToggle = document.querySelector("#themeToggle");
-    const themeIcon = document.querySelector("#themeIcon");
-    function updateThemeIcon() { themeIcon.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾"; }
-    updateThemeIcon();
-    themeToggle.addEventListener("click", () => {
-      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      document.documentElement.dataset.theme = next; localStorage.setItem("ami-theme", next); updateThemeIcon();
-    });
+    if (menuButton && mainNav) {
+      menuButton.addEventListener("click", () => {
+        const open = mainNav.classList.toggle("open");
 
-    const searchInput = document.querySelector("#searchInput");
-    const emptyMessage = document.querySelector("#emptyMessage");
-    searchInput.addEventListener("input", () => {
-      const q = searchInput.value.toLowerCase().trim(); let visible = 0;
-      document.querySelectorAll("#articleGrid .card").forEach(card => {
-        const show = card.textContent.toLowerCase().includes(q) || card.dataset.search.includes(q);
-        card.hidden = !show; if (show) visible++;
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(open)
+        );
       });
-      emptyMessage.hidden = visible !== 0;
-    });
 
-    const dialog = document.querySelector("#uploadDialog");
-    document.querySelector("#openUploadDialog").addEventListener("click", () => dialog.showModal());
-    document.querySelector("#closeUploadDialog").addEventListener("click", () => dialog.close());
-    document.querySelector("#cancelUpload").addEventListener("click", () => dialog.close());
-    dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
-    document.querySelector("#articleUploadForm").addEventListener("submit", e => {
-      e.preventDefault();
-      const title = document.querySelector("#articleTitle").value.trim();
-      const summary = document.querySelector("#articleSummary").value.trim();
-      const category = document.querySelector("#articleCategory").value.trim() || "Research article";
-      const file = document.querySelector("#articleFile").files[0];
-      if (!file) return;
-      const url = URL.createObjectURL(file);
-      const card = document.createElement("article"); card.className = "card"; card.dataset.search = `${title} ${summary} ${category}`.toLowerCase();
-      const tag = document.createElement("span"); tag.className = "tag"; tag.textContent = category;
-      const time = document.createElement("time"); time.dateTime = new Date().toISOString().slice(0,10); time.textContent = new Date().toLocaleDateString("en-IN", {day:"numeric", month:"long", year:"numeric"});
-      const h3 = document.createElement("h3"); h3.textContent = title;
-      const p = document.createElement("p"); p.textContent = summary;
-      const a = document.createElement("a"); a.className = "card-link"; a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Open preview →";
-      card.append(tag, time, h3, p, a); document.querySelector("#articleGrid").prepend(card);
-      e.target.reset(); dialog.close(); card.scrollIntoView({behavior:"smooth", block:"center"});
-    });
-    document.querySelector("#year").textContent = new Date().getFullYear();
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    /*
+      Light and dark theme
+    */
+
+    const themeToggle =
+      document.querySelector("#themeToggle");
+
+    const themeIcon =
+      document.querySelector("#themeIcon");
+
+    function updateThemeIcon() {
+      if (!themeIcon) {
+        return;
+      }
+
+      themeIcon.textContent =
+        document.documentElement.dataset.theme === "dark"
+          ? "☀"
+          : "☾";
+    }
+
+    updateThemeIcon();
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.dataset.theme;
+
+        const nextTheme =
+          currentTheme === "dark" ? "light" : "dark";
+
+        document.documentElement.dataset.theme =
+          nextTheme;
+
+        try {
+          localStorage.setItem("ami-theme", nextTheme);
+        } catch (error) {
+          console.warn("Theme preference could not be saved.");
+        }
+
+        updateThemeIcon();
+      });
+    }
+
+    /*
+      Article search
+    */
+
+    const searchInput =
+      document.querySelector("#searchInput");
+
+    const emptyMessage =
+      document.querySelector("#emptyMessage");
+
+    if (searchInput && emptyMessage) {
+      searchInput.addEventListener("input", () => {
+        const query =
+          searchInput.value.toLowerCase().trim();
+
+        let visibleCards = 0;
+
+        document
+          .querySelectorAll("#articleGrid .card")
+          .forEach((card) => {
+            const cardText =
+              card.textContent.toLowerCase();
+
+            const searchTerms =
+              (card.dataset.search || "").toLowerCase();
+
+            const showCard =
+              cardText.includes(query) ||
+              searchTerms.includes(query);
+
+            card.hidden = !showCard;
+
+            if (showCard) {
+              visibleCards += 1;
+            }
+          });
+
+        emptyMessage.hidden = visibleCards !== 0;
+      });
+    }
+
+    /*
+      Upload-preview dialog
+    */
+
+    const dialog =
+      document.querySelector("#uploadDialog");
+
+    const openDialogButton =
+      document.querySelector("#openUploadDialog");
+
+    const closeDialogButton =
+      document.querySelector("#closeUploadDialog");
+
+    const cancelUploadButton =
+      document.querySelector("#cancelUpload");
+
+    if (dialog && openDialogButton) {
+      openDialogButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+    }
+
+    if (dialog && closeDialogButton) {
+      closeDialogButton.addEventListener("click", () => {
+        dialog.close();
+      });
+    }
+
+    if (dialog && cancelUploadButton) {
+      cancelUploadButton.addEventListener("click", () => {
+        dialog.close();
+      });
+    }
+
+    if (dialog) {
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) {
+          dialog.close();
+        }
+      });
+    }
+
+    /*
+      Add a temporary preview article card.
+      The card is not permanently uploaded to GitHub.
+    */
+
+    const articleUploadForm =
+      document.querySelector("#articleUploadForm");
+
+    if (articleUploadForm) {
+      articleUploadForm.addEventListener(
+        "submit",
+        (event) => {
+          event.preventDefault();
+
+          const title =
+            document
+              .querySelector("#articleTitle")
+              .value
+              .trim();
+
+          const summary =
+            document
+              .querySelector("#articleSummary")
+              .value
+              .trim();
+
+          const categoryInput =
+            document
+              .querySelector("#articleCategory")
+              .value
+              .trim();
+
+          const category =
+            categoryInput || "Research article";
+
+          const file =
+            document.querySelector("#articleFile").files[0];
+
+          if (!file || !title || !summary) {
+            return;
+          }
+
+          const fileUrl = URL.createObjectURL(file);
+
+          const card =
+            document.createElement("article");
+
+          card.className = "card";
+
+          card.dataset.search =
+            `${title} ${summary} ${category}`.toLowerCase();
+
+          const tag =
+            document.createElement("span");
+
+          tag.className = "tag";
+          tag.textContent = category;
+
+          const time =
+            document.createElement("time");
+
+          const currentDate = new Date();
+
+          time.dateTime =
+            currentDate.toISOString().slice(0, 10);
+
+          time.textContent =
+            currentDate.toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "long",
+              year: "numeric"
+            });
+
+          const heading =
+            document.createElement("h3");
+
+          heading.textContent = title;
+
+          const description =
+            document.createElement("p");
+
+          description.textContent = summary;
+
+          const articleLink =
+            document.createElement("a");
+
+          articleLink.className = "card-link";
+          articleLink.href = fileUrl;
+          articleLink.target = "_blank";
+          articleLink.rel = "noopener";
+          articleLink.textContent = "Open preview →";
+
+          card.append(
+            tag,
+            time,
+            heading,
+            description,
+            articleLink
+          );
+
+          const articleGrid =
+            document.querySelector("#articleGrid");
+
+          articleGrid.prepend(card);
+
+          event.target.reset();
+          dialog.close();
+
+          card.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      );
+    }
+
+    /*
+      Automatically update the footer year
+    */
+
+    const year =
+      document.querySelector("#year");
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
   </script>
 </body>
 </html>
