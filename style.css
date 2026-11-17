@@ -1442,14 +1442,125 @@ body.qh-page.healthcare-article-page {
   background: transparent !important;
 }
 
-/* Keep the top hero transparent because the body owns the image */
+/* Quantum healthcare article hero image */
 .qh-page .qh-hero,
 .qh-page.has-hero-image .qh-hero {
-  background: transparent !important;
-  background-image: none !important;
-  min-height: 620px;
+  position: relative;
+  isolation: isolate;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  min-height: clamp(620px, 82vh, 900px);
+  overflow: hidden;
+  color: #ffffff;
+
+  background-color: #06142d !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 12, 29, 0.96) 0%,
+      rgba(3, 15, 34, 0.86) 38%,
+      rgba(5, 20, 43, 0.55) 72%,
+      rgba(5, 20, 43, 0.32) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 12, 29, 0.96) 0%,
+      rgba(3, 12, 29, 0.08) 65%
+    ),
+    url("images/images/quantum-healthcare-hero.webp") !important;
+.qh-page .qh-hero .qh-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 7rem 0 5rem;
+}
+
+.qh-page .qh-hero h1 {
+  max-width: 1000px;
+  margin: 0.75rem 0 1.25rem;
+  color: #ffffff;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+  text-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.85),
+    0 1px 2px rgba(0, 0, 0, 0.95);
+}
+
+.qh-page .qh-hero .qh-deck {
+  max-width: 820px;
+  color: #e4f0ff;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.7;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.85);
+}
+
+.qh-page .qh-hero .qh-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  margin-top: 1.75rem;
+  color: #c7d8ee;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+}
+
+.qh-page .qh-hero .qh-back {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  color: #d9f7ff;
+  font-weight: 750;
+}
+
+.qh-page .qh-hero .qh-kicker {
+  display: block;
+  color: #9ee8f4;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .qh-page .qh-hero,
+  .qh-page.has-hero-image .qh-hero {
+    min-height: 680px;
+
+    background-image:
+      linear-gradient(
+        0deg,
+        rgba(3, 12, 29, 0.98) 0%,
+        rgba(3, 14, 32, 0.87) 55%,
+        rgba(3, 14, 32, 0.42) 100%
+      ),
+      url("images/images/quantum-healthcare-hero.webp") !important;
+
+    background-position: center !important;
+  }
+
+  .qh-page .qh-hero .qh-wrap {
+    width: calc(100% - 2rem);
+    padding: 4rem 0 2.75rem;
+  }
+
+  .qh-page .qh-hero h1 {
+    font-size: clamp(2.15rem, 11vw, 3.5rem);
+    line-height: 1.06;
+  }
+
+  .qh-page .qh-hero .qh-deck {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .qh-page .qh-hero .qh-meta {
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 0.86rem;
+  }
+}
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
 }
 
 /* Full-width dark overlay behind the article reading area */
