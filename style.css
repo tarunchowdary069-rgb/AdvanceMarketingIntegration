@@ -1982,3 +1982,50 @@ body.qh-page.has-hero-image .qh-disclaimer {
     height: 210px;
   }
 }
+/* Executive details in the Contact section */
+.contact-profile {
+  margin-top: 2rem;
+  padding-left: 1.25rem;
+  border-left: 4px solid #6fd4ff;
+}
+
+.contact-name {
+  margin: 0 0 0.65rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.contact-position {
+  margin: 0 0 0.35rem;
+  color: #d7e2f3;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.contact-company {
+  margin: 0;
+  color: #6fd4ff;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 680px) {
+  .contact-profile {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  .contact-name {
+    font-size: 2rem;
+  }
+
+  .contact-position {
+    font-size: 1rem;
+  }
+}
