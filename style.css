@@ -1992,7 +1992,7 @@ body.qh-page.has-hero-image .qh-disclaimer {
 .contact-name {
   margin: 0 0 0.65rem;
   color: #ffffff;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
