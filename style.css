@@ -1937,3 +1937,48 @@ body.qh-page.has-hero-image .qh-disclaimer {
     border-radius: 16px;
   }
 }
+/* Full-width images in the lower article section */
+.wide-card-image-link {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #071426;
+}
+
+.wide-card-image {
+  display: block;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.wide-card-image-link:hover .wide-card-image {
+  transform: scale(1.02);
+  filter: brightness(1.06);
+}
+
+.wide-card-image-link:focus-visible {
+  outline: 3px solid #75d8ff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 980px) {
+  .wide-card-image {
+    height: 260px;
+  }
+}
+
+@media (max-width: 680px) {
+  .wide-card-image-link {
+    margin-bottom: 1.5rem;
+    border-radius: 14px;
+  }
+
+  .wide-card-image {
+    height: 210px;
+  }
+}
