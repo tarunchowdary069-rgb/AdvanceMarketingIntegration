@@ -190,20 +190,9 @@ if (uploadForm && articleGrid && uploadDialog) {
     });
   });
 }
-      e.preventDefault();
-      const title = document.querySelector("#articleTitle").value.trim();
-      const summary = document.querySelector("#articleSummary").value.trim();
-      const category = document.querySelector("#articleCategory").value.trim() || "Research article";
-      const file = document.querySelector("#articleFile").files[0];
-      if (!file) return;
-      const url = URL.createObjectURL(file);
-      const card = document.createElement("article"); card.className = "card"; card.dataset.search = `${title} ${summary} ${category}`.toLowerCase();
-      const tag = document.createElement("span"); tag.className = "tag"; tag.textContent = category;
-      const time = document.createElement("time"); time.dateTime = new Date().toISOString().slice(0,10); time.textContent = new Date().toLocaleDateString("en-IN", {day:"numeric", month:"long", year:"numeric"});
-      const h3 = document.createElement("h3"); h3.textContent = title;
-      const p = document.createElement("p"); p.textContent = summary;
-      const a = document.createElement("a"); a.className = "card-link"; a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Open preview →";
-      card.append(tag, time, h3, p, a); document.querySelector("#articleGrid").prepend(card);
-      e.target.reset(); dialog.close(); card.scrollIntoView({behavior:"smooth", block:"center"});
-    ;
-    document.querySelector("#year").textContent = new Date().getFullYear();
+    const yearElement = document.querySelector("#year");
+
+if (yearElement) {
+  yearElement.textContent =
+    new Date().getFullYear();
+}

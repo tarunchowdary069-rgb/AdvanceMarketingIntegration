@@ -2080,3 +2080,32 @@ body.qh-page.has-hero-image .qh-disclaimer {
     border-radius: 14px;
   }
 }
+.card-image[src*="quantum-agriculture"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 100%;
+}
+.featured-image,
+.featured-agriculture-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+
+  object-fit: contain;
+  object-position: center;
+
+  border: 1px solid rgba(103, 232, 249, 0.24);
+  border-radius: 18px;
+
+  background: #031324;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+}
+@media (max-width: 760px) {
+  .featured-image,
+  .featured-agriculture-image {
+    max-height: none;
+    border-radius: 12px;
+  }
+}
