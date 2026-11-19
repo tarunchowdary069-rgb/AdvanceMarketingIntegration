@@ -2029,3 +2029,21 @@ body.qh-page.has-hero-image .qh-disclaimer {
     font-size: 1rem;
   }
 }
+/* New 1600 × 600 cover photos in the second article section */
+.information-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+@media (max-width: 680px) {
+  .information-banner {
+    min-height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+}
