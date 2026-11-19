@@ -2029,21 +2029,41 @@ body.qh-page.has-hero-image .qh-disclaimer {
     font-size: 1rem;
   }
 }
-/* New 1600 × 600 cover photos in the second article section */
+/* Full visibility for 1600 × 600 information banners */
 .information-banner {
   display: block;
   width: 100%;
+  max-width: 1600px;
   height: auto;
   aspect-ratio: 8 / 3;
-  object-fit: cover;
+  margin-inline: auto;
+  object-fit: contain;
   object-position: center;
   border-radius: 20px;
+  background-color: #071426;
 }
-
+/* Show the complete 1600 × 600 banner without cropping */
+.card-image.information-banner {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 8 / 3;
+  margin: 0;
+  border-radius: 20px;
+  object-fit: contain !important;
+  object-position: center;
+  background-color: #071426;
+}
 @media (max-width: 680px) {
-  .information-banner {
-    min-height: 180px;
-    object-fit: cover;
+  .card-image.information-banner {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
     border-radius: 14px;
+    object-fit: contain;
+    object-position: center;
   }
 }
