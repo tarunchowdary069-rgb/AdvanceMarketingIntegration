@@ -315,11 +315,8 @@ h3 {
   border:1px solid #e1e6ef;
   border-radius:12px
 }
-.contact {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px
+.contact.contact-profile-section {
+  display: grid !important;
 }
 .footer-inner {
   display:flex;
@@ -2107,5 +2104,731 @@ body.qh-page.has-hero-image .qh-disclaimer {
   .featured-agriculture-image {
     max-height: none;
     border-radius: 12px;
+  }
+}
+/* =====================================================
+   CONTACT LEADERSHIP PROFILE
+   ===================================================== */
+
+.contact-profile-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 34px;
+
+  width: 100%;
+  padding: clamp(28px, 5vw, 58px);
+
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(3, 15, 35, 0.93),
+      rgba(8, 31, 62, 0.88)
+    );
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Contact heading */
+
+.contact-intro {
+  max-width: 900px;
+}
+
+.contact-intro h2 {
+  margin: 12px 0 18px;
+
+  color: #ffffff;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.contact-intro p {
+  max-width: 850px;
+  margin: 0;
+
+  color: #d5e2f5;
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  line-height: 1.75;
+}
+
+/* Portrait and leadership information */
+
+.contact-leader {
+  display: grid;
+  grid-template-columns: minmax(240px, 390px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 58px);
+  align-items: center;
+
+  padding: clamp(22px, 4vw, 38px);
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 18, 41, 0.96),
+      rgba(13, 40, 75, 0.86)
+    );
+}
+
+.contact-photo-frame {
+  position: relative;
+  margin: 0;
+  padding: 8px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #67e8f9,
+      #2563eb,
+      #d4a84f
+    );
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.42),
+    0 0 34px rgba(37, 99, 235, 0.22);
+}
+
+.contact-photo-frame::after {
+  position: absolute;
+  z-index: -1;
+  inset: 12%;
+
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.48);
+  filter: blur(38px);
+
+  content: "";
+}
+.contact-profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 17px;
+  background: #06152c;
+}
+
+.contact-leader-details {
+  min-width: 0;
+}
+
+.contact-role-label {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 7px 12px;
+
+  border: 1px solid rgba(103, 232, 249, 0.38);
+  border-radius: 999px;
+
+  background: rgba(30, 64, 175, 0.22);
+  color: #7dd3fc;
+
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.contact-leader-details h3 {
+  margin: 0 0 14px;
+
+  color: #ffffff;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.08;
+
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+}
+
+.contact-primary-role {
+  margin: 0 0 7px;
+
+  color: #e4edff !important;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.contact-organisation {
+  margin: 0 0 22px;
+
+  color: #7dd3fc !important;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.contact-focus {
+  max-width: 760px;
+  margin: 0;
+
+  color: #cbd8ea !important;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+/* Bottom email contact bar */
+
+.contact-email-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+
+  padding: 24px 26px;
+
+  border: 1px solid rgba(96, 165, 250, 0.34);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 38, 76, 0.96),
+      rgba(29, 78, 216, 0.78)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(37, 99, 235, 0.16);
+}
+
+.contact-email-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-email-eyebrow {
+  color: #a5f3fc;
+
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-email-copy strong {
+  color: #ffffff;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.3;
+}
+
+.contact-email-copy small {
+  width: fit-content;
+  margin-top: 3px;
+  padding: 3px 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #dbeafe;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact-email-panel .email-button {
+  flex-shrink: 0;
+  gap: 10px;
+
+  min-width: 220px;
+  min-height: 54px;
+  padding: 14px 22px;
+
+  border-color: rgba(255, 255, 255, 0.4);
+  background: #ffffff;
+  color: #123b83;
+
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.contact-email-panel .email-button:hover,
+.contact-email-panel .email-button:focus-visible {
+  border-color: #7dd3fc;
+  background: #e7f7ff;
+  color: #0f3478;
+
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .contact-leader {
+    grid-template-columns: minmax(200px, 310px) minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .contact-profile-section {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .contact-leader {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .contact-photo-frame {
+    width: min(100%, 380px);
+    margin-inline: auto;
+  }
+
+  .contact-leader-details {
+    text-align: center;
+  }
+
+  .contact-role-label {
+    justify-content: center;
+  }
+
+  .contact-email-panel {
+    align-items: stretch;
+    flex-direction: column;
+
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact-email-copy {
+    justify-items: center;
+  }
+
+  .contact-email-panel .email-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .profile-picture-card {
+    width: min(100%, 390px);
+    height: 480px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile-picture-card {
+    width: min(100%, 340px);
+    height: 420px;
+  }
+}
+
+  .leadership-container {
+    width: min(100%, 1450px);
+    height: 100%;
+    margin-inline: auto;
+    grid-template-columns: minmax(410px, 500px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(36px, 5vw, 72px);
+  }
+
+  .profile-picture-card {
+    width: 100%;
+    max-width: 500px;
+    height: min(64vh, 580px);
+    max-height: calc(100vh - 185px);
+    margin: 0;
+    padding: 8px;
+    justify-self: center;
+    overflow: hidden;
+    border-radius: 26px;
+  }
+
+  .profile-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 19px;
+    background: #071526;
+  }
+
+  .leadership-content {
+    max-width: 720px;
+    align-self: center;
+  }
+
+  .leadership-label {
+    margin-bottom: 14px;
+  }
+
+  .leadership-name {
+    margin: 0;
+    font-size: clamp(2.7rem, 4vw, 4.5rem);
+    line-height: 1;
+  }
+
+  .leadership-role {
+    margin-top: 16px;
+    font-size: clamp(1.2rem, 1.65vw, 1.65rem);
+    line-height: 1.25;
+  }
+
+  .leadership-organisation {
+    margin-top: 9px;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+  }
+
+  .leadership-summary {
+    margin-top: 16px;
+    font-size: clamp(0.94rem, 1.05vw, 1.05rem);
+    line-height: 1.55;
+  }
+
+  .leadership-actions {
+    margin-top: 18px;
+  }
+/* =====================================================
+   FINAL COMPACT PROFILE SECTION
+   Uses the actual classes from index.html
+   ===================================================== */
+
+@media (min-width: 901px) {
+  /* Make the complete contact/profile section compact */
+  .contact-profile-section {
+    gap: 18px;
+    padding: 24px 30px;
+  }
+
+  /* Make the introductory heading more compact */
+  .contact-intro h2 {
+    margin: 6px 0 8px;
+    font-size: clamp(2rem, 3.5vw, 3.4rem);
+    line-height: 1.05;
+  }
+
+  .contact-intro p {
+    max-width: 900px;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* Compact two-column profile layout */
+  .contact-leader {
+    grid-template-columns: 420px minmax(0, 1fr);
+    gap: 44px;
+    align-items: center;
+    padding: 20px 28px;
+  }
+
+  /* Wider and shorter portrait frame */
+  .contact-photo-frame {
+    width: 420px;
+    height: 480px;
+    margin: 0;
+    padding: 7px;
+    justify-self: center;
+    overflow: hidden;
+    border-radius: 22px;
+  }
+
+  /* Display the complete actual photograph */
+  .contact-profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 16px;
+    background: #06152c;
+  }
+
+  /* Compact profile information */
+  .contact-role-label {
+    margin-bottom: 12px;
+    padding: 6px 12px;
+  }
+
+  .contact-leader-details h3 {
+    margin: 0 0 10px;
+    font-size: clamp(2.3rem, 3.5vw, 3.7rem);
+    line-height: 1;
+  }
+
+  .contact-primary-role {
+    margin-bottom: 5px;
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  }
+
+  .contact-organisation {
+    margin-bottom: 14px;
+    font-size: 1rem;
+  }
+
+  .contact-focus {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  /* Compact email bar */
+  .contact-email-panel {
+    padding: 16px 20px;
+  }
+}
+@media (max-width: 900px) {
+  .contact-leader {
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .contact-photo-frame {
+    width: 340px;
+    height: 410px;
+    margin-inline: auto;
+  }
+
+  .contact-profile-photo {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-profile-section {
+    gap: 20px;
+    padding: 22px 16px;
+  }
+
+  .contact-intro h2 {
+    font-size: 2.3rem;
+  }
+
+  .contact-leader {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 16px;
+  }
+
+  .contact-photo-frame {
+    width: min(100%, 330px);
+    height: 390px;
+    margin-inline: auto;
+  }
+
+  .contact-profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-photo-frame {
+    width: min(100%, 290px);
+    height: 350px;
+  }
+}
+/* =====================================================
+   QUANTUM COLLABORATION CAPTION AND CTA
+   ===================================================== */
+
+.contact-intro {
+  max-width: 1100px;
+  margin-bottom: 4px;
+}
+
+.contact-intro .tag {
+  color: #7dd3fc;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.contact-intro h2 {
+  max-width: 1050px;
+  margin: 12px 0 14px;
+
+  color: #ffffff;
+  font-size: clamp(2.25rem, 4.6vw, 4.6rem);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 4px 22px rgba(0, 0, 0, 0.58),
+    0 0 38px rgba(37, 99, 235, 0.18);
+}
+
+.contact-innovation-caption {
+  max-width: 930px;
+  margin: 0;
+
+  color: #cfe4ff !important;
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+  line-height: 1.7;
+}
+
+/* Blue quantum CTA button */
+.contact-email-panel .quantum-contact-button {
+  position: relative;
+  isolation: isolate;
+
+  display: inline-flex;
+  min-width: 320px;
+  min-height: 62px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  padding: 16px 25px;
+  overflow: hidden;
+
+  border: 1px solid rgba(186, 230, 253, 0.9);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0ea5e9 0%,
+      #2563eb 46%,
+      #4338ca 100%
+    ) !important;
+
+  color: #ffffff !important;
+  font-size: 1.02rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+
+  box-shadow:
+    0 17px 42px rgba(37, 99, 235, 0.48),
+    0 0 28px rgba(14, 165, 233, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.contact-email-panel .quantum-contact-button::before {
+  position: absolute;
+  z-index: -1;
+  top: -110%;
+  left: -45%;
+
+  width: 44%;
+  height: 320%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.34),
+      transparent
+    );
+
+  content: "";
+  transform: rotate(24deg);
+  transition: left 440ms ease;
+}
+
+.contact-email-panel .quantum-contact-button:hover {
+  border-color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8 0%,
+      #2563eb 42%,
+      #4f46e5 100%
+    ) !important;
+
+  color: #ffffff !important;
+  filter: brightness(1.09);
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 23px 50px rgba(37, 99, 235, 0.58),
+    0 0 36px rgba(14, 165, 233, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.44);
+}
+
+.contact-email-panel .quantum-contact-button:hover::before {
+  left: 125%;
+}
+
+.contact-email-panel .quantum-contact-button:active {
+  transform: translateY(-1px);
+}
+
+.contact-email-panel .quantum-contact-button:focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 5px;
+}
+
+.quantum-button-arrow {
+  display: inline-flex;
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+
+  font-size: 1.15rem;
+  line-height: 1;
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.quantum-contact-button:hover .quantum-button-arrow {
+  background: rgba(255, 255, 255, 0.27);
+  transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+  .contact-intro {
+    text-align: center;
+  }
+
+  .contact-intro h2 {
+    font-size: clamp(2rem, 10vw, 3.1rem);
+  }
+
+  .contact-innovation-caption {
+    margin-inline: auto;
+    font-size: 1rem;
+  }
+
+  .contact-email-panel .quantum-contact-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 58px;
+    padding: 14px 18px;
   }
 }
